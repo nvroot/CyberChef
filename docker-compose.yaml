@@ -14,7 +14,7 @@ services:
       - PGID=1000
       - TZ=Asia/Baku
     volumes:
-      - './cyberchef:/app/data'
+      - 'cyberchef-data:/app/data'
     healthcheck:
       test:
         - CMD
@@ -28,3 +28,7 @@ services:
 networks:
   proxy:
     external: true
+volumes:
+  cyberchef-data:
+      name: cyberchef-data
+      driver: local
